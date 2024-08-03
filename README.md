@@ -56,7 +56,7 @@ Peak memory should be around 500MB.
 | --- | --- | --- | --- |
 | Run **with** `bitcoind` | Yes ✅ | No ❌ | Yes ✅ |
 | Run **without** `bitcoind` | No ❌ | Yes ✅ | Yes ✅ |
-| `0..=855_000`* | 16mn40s | 17mn 46s | > 2h |
-| `800_000..=855_000`* | 2mn 53s (16mn40s if first run) | 3mn 2s | > 2h |
+| `0..=855_000` | 16mn40s | 17mn 46s | > 2h |
+| `800_000..=855_000` | 2mn 53s (16mn40s if first run) | 3mn 2s | > 2h |
 
 *Benchmarked on a Macbook Pro M3 Pro*
