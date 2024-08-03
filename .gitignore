@@ -1,0 +1,5 @@
+/target
+old
+bitcoin_cli.rs
+.DS_Store
+*\ copy*
