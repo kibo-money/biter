@@ -50,17 +50,13 @@ Even though it reads *blkXXXXX.dat* files, it **needs** `bitcoind` to run with t
 
 Peak memory should be around 500MB.
 
-## Benchmarks
+## Comparaison
 
-[biter](https://crates.io/crates/biter)
-- `0..=855_000`: 16mn40s
-- `800_000..=855_000`: 16mn40s (if first run)
-- `800_000..=855_000`: 2mn 53s (if indexed)
+|  | [biter](https://crates.io/crates/biter) | [bitcoin-explorer](https://crates.io/crates/bitcoin-explorer) | [blocks_iterator](https://crates.io/crates/blocks_iterator) |
+| --- | --- | --- | --- |
+| Run **with** `bitcoind` | Yes ✅ | No ❌ | Yes ✅ |
+| Run **without** `bitcoind` | No ❌ | Yes ✅ | Yes ✅ |
+| `0..=855_000`* | 16mn40s | 17mn 46s | > 2h |
+| `800_000..=855_000`* | 2mn 53s (16mn40s if first run) | 3mn 2s | > 2h |
 
-[blocks_iterator](https://crates.io/crates/blocks_iterator)
-- `0..=855_000`: > 2h
-- `800_000..=855_000`: > 2h
-
-[bitcoin-explorer](https://crates.io/crates/bitcoin-explorer)
-- `0..=855_000`: 17mn 46s
-- `800_000..=855_000`: 3mn 2s
+*Benchmarked on a Macbook Pro M3 Pro*
