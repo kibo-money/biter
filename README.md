@@ -29,7 +29,7 @@ fn main() {
 
     // RPC client to filter out forks
     let url = "http://localhost:8332";
-    let auth = Auth::UserPass("user".to_string(), "pw".to_string());
+    let auth = Auth::UserPass("satoshi".to_string(), "nakamoto".to_string());
     let rpc = Client::new(url, auth).unwrap();
 
     // Create channel receiver then iterate over the blocks

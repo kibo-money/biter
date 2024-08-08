@@ -58,7 +58,7 @@ enum BlockState {
 ///     let i = std::time::Instant::now();
 ///
 ///     let url = "http://localhost:8332";
-///     let auth = Auth::UserPass("user".to_string(), "pw".to_string());
+///     let auth = Auth::UserPass("satoshi".to_string(), "nakamoto".to_string());
 ///     let rpc = Client::new(url, auth).unwrap();
 ///
 ///     let data_dir = "../../bitcoin";
@@ -143,7 +143,7 @@ pub fn new(
                 }
 
                 ControlFlow::Continue(())
-            });
+            })
     });
 
     // thread::spawn(move || {
@@ -214,7 +214,7 @@ pub fn new(
         recv_block_reader.iter().try_for_each(|tuple| {
             bulk.push(tuple);
 
-            if bulk.len() < BOUND_CAP {
+            if bulk.len() < BOUND_CAP / 2 {
                 return ControlFlow::Continue(());
             }
 
